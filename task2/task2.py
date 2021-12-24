@@ -24,11 +24,12 @@ def circular_array(file_circular, file_point):
             + math.pow((all_points[i_point][1] - centre_circular[1]), 2)
         )
         if distance_to_point == radius:
-            print(f"{i_point} - точка лежит на окружности\n")
+            print(f"{i_point} - точка лежит на окружности")
         elif distance_to_point < radius:
-            print(f"{i_point} - точка внутри\n")
+            print(f"{i_point} - точка внутри")
         else:
-            print(f"{i_point} - точка снаружи\n")
+            print(f"{i_point} - точка снаружи")
+        print("\n")
 
 
 if __name__ == "__main__":
