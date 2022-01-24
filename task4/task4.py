@@ -1,4 +1,3 @@
-import statistics
 import sys
 
 
@@ -7,18 +6,12 @@ def equal_numbers(file):
     with open(file, 'r', encoding='utf-8') as work_file:
         for number in work_file.readlines():
             list_numbers.append(int(number))
-    medium = int(statistics.mean(list_numbers))
-    count = 0
-    for num in list_numbers:
-        if num < medium:
-            while num != medium:
-                num += 1
-                count += 1
-        else:
-            while num != medium:
-                num -= 1
-                count += 1
-    print(f"{count}\n")
+    list_numbers.sort()
+    mid = len(list_numbers) // 2
+    medium = 0
+    for i in list_numbers:
+        medium += abs(i - list_numbers[mid])
+    print(f"{medium}\n")
 
 
 if __name__ == "__main__":

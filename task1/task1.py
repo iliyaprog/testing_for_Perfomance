@@ -35,4 +35,11 @@ def circular_array(num_array, length_interval):
 
 
 if __name__ == "__main__":
-    print(circular_array(int(sys.argv[1]), int(sys.argv[2])))
+    if int(sys.argv[1]) <= 0 and int(sys.argv[2]) <= 0:
+        print('Входные данные не верны\n')
+    else:
+        try:
+            print(f"{circular_array(int(sys.argv[1]), int(sys.argv[2]))}\n")
+        except:
+            print('Входные данные не верны\n')
+
